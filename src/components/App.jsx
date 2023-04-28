@@ -2,6 +2,7 @@ import { Profile } from "./Profile/Profile";
 import { Statistics } from "./Statistics/Statistics";
 import user from '../user.json';
 import data from '../data.json'
+import { Statlist } from "./Statistics/statlist";
 
 
 
@@ -25,10 +26,8 @@ export const App = () => {
     stats={user.stats}
       
     />
-    <Statistics data={data} />
+    <Statistics data={data} />    
     </div>
     );
 };
 
-// <Statistics />
-// <Profile />,
