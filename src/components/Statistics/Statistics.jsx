@@ -1,12 +1,17 @@
 import React from 'react';
-import { Statlist } from './statlist';
 
-export const Statistics = (data) => {
+
+export const Statistics = ({ data,title }) => {   
    return(
-    <section className="statistics">
-    <h2 className="title">Upload stats</h2>
+    <section className="statistics">         
+          {title && (<h2 className='title'>{title}</h2>)}
          <ul className="stat-list">           
-            <Statlist stata={data}></Statlist>     
+            {data.map(el => (
+               <li className="item" key={el.id}>
+                  <span className="label">{el.label}</span>
+                  <span className="percentage">{el.percentage} { `%`}</span>
+               </li>
+          ))}      
       </ul> 
    </section>
        )

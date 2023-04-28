@@ -3,6 +3,7 @@ import { Statistics } from "./Statistics/Statistics";
 import user from '../user.json';
 import data from '../data.json'
 
+
 export const App = () => {
   
   return (<div
@@ -23,7 +24,10 @@ export const App = () => {
     stats={user.stats}
       
     />
-    <Statistics data={data} />    
+    
+    <Statistics data={data} title='Upload stats' />   
+    {/* <Statistics data={data}  />  */}
+       
     </div>
     );
 };
