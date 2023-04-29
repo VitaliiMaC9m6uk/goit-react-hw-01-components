@@ -1,5 +1,12 @@
-export const Profile = (user) => {          
-    const {avatar,username,tag,location,stats } = user;
+import PropTypes from 'prop-types';
+
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  stats,
+}) => {
     return (        
     <div className="profile">
         <div className="description">
@@ -8,8 +15,8 @@ export const Profile = (user) => {
       alt="User avatar"
       className="avatar"
     />
-    <p className="name">{ username}</p>
-    <p className="tag">@{tag }</p>
+    <p className="name">{username}</p>
+    <p className="tag">@{tag} </p>
     <p className="location">{location}</p>
   </div>
 
@@ -32,3 +39,15 @@ export const Profile = (user) => {
     )
     
 }
+
+Profile.prototype = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes:PropTypes.number.isRequired,
+  }))
+};

@@ -1,5 +1,4 @@
-import React from 'react';
-
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ data,title }) => {   
    return(
@@ -16,4 +15,13 @@ export const Statistics = ({ data,title }) => {
    </section>
        )
           
+}
+
+Statistics.prototype = {
+   title: PropTypes.string,
+   data: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage:PropTypes.number.isRequired,
+   }))
 }
